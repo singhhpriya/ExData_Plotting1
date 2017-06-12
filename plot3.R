@@ -28,7 +28,10 @@ df <- cbind(dateTime, df)
 # Convert DT into std. format
 df$dateTime <- as.POSIXct(dateTime)
 
-### Create Plot 3
+### Open and format plot
+png(file="plot3.png", width = 480, height = 480, res = 72)
+
+#### Create Plot 3
 with(df, {
   plot(Sub_metering_1~dateTime, type="l",
        ylab="Energy sub metering", xlab="")
@@ -38,6 +41,5 @@ with(df, {
 legend("topright", col=c("black", "red", "blue"), lwd=c(1,1,1), 
        c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-### dev.cur()
-### png(file="plot3.png")
-### dev.off()
+# Close png device
+dev.off()

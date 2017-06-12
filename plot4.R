@@ -1,3 +1,6 @@
+## Open and format plot
+png(file="plot4.png", width = 480, height = 480, res = 72)
+
 # Setting plot formats
 par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 
@@ -24,6 +27,5 @@ legend("topright", col=c("black", "red", "blue"), lwd=c(1,1,1),
 plot(df$Global_reactive_power~df$dateTime, type="l",
      ylab="Global_reactive_power", xlab="datetime")
 
-### dev.cur()
-### png(file="plot4.png")
-### dev.off()
+# Close png device
+dev.off()

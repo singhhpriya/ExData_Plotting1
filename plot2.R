@@ -28,11 +28,14 @@ df <- cbind(dateTime, df)
 # Convert DT into std. format
 df$dateTime <- as.POSIXct(dateTime)
 
+# Open and format plot
+png(file="plot2.png", width = 480, height = 480, res = 72)
+
 ## Create Plot 2
 plot(df$Global_active_power~df$dateTime, type="l",
      ylab="Global Active Power (kilowatts)", xlab="")
 
-### dev.cur()
-### png(file="plot2.png")
-### dev.off()
+# Close png device
+dev.off()
+
 
